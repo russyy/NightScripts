@@ -1,3 +1,17 @@
 +@echo off
-
+rem +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+rem +                                                       +
+rem +  PullToPC_Night.BAT                                   +      
+rem +                                                       +         
+rem +  Created by : last name greatest, first name ever     +      
+rem +                                                       +
+rem +  This .BAT FILE copies night files from + 
+rem +                                                       +
+rem +                                                       +
+rem +                                                       +
+rem +                                                       +
+rem +                                                       +
+rem +  Files copied to "C:\pulltopc_05_specials_DATE"       +
+rem +                                                       +
+rem +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
