@@ -14,23 +14,21 @@ rem +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
 :START
 cls
+echo.Please remember date equal to next date!
+color 0D
+pause 
+cls
 echo       --------------------------------------
-echo                  CheckNightFiles
+echo                  Check Night Files
 echo       --------------------------------------
 ECHO.
 echo.
 echo.
-set /p DD=      Enter Processing Date (DD)    :
-set /p MM=                            (MM)    :
-set /p YEAR=                           (YYYY)   :
+set /p DD=                  Enter Date (DD)    :
+set /p MM=                             (MM)    :
+set /p YEAR=                          (YYYY)   :
 echo.
-set /p DD1=      Enter Following Date  (DD)    :
-set /p MM1=                            (MM)    :
-set /p YEAR1=                           (YYYY)   :
-echo.
-echo       --------------------------------------
-echo.
-set /p choice=      Confirm dates above (Y/N) :
+set /p choice=      Confirm date above (Y/N) :
 
 
 if not '%choice%'=='' set choice=%choice:~0,1%
@@ -41,7 +39,7 @@ if "%choice%"=="n" goto START
 If "%choice%"==" " goto START
 If "%choice%"=="X" Exit
 ::
-color 4C
+color 0D
 echo.
 echo "%choice%" is NOT A VALID OPTION - TRY AGAIN...
 echo 
@@ -107,62 +105,6 @@ if "%MM%"=="12" (
 set MON=DEC
 )
 
-If "%MM1%"=="" (
-ECHO Invalid Month!!!
-pause
-goto START
-)
-If "%MM1%"==" " (
-ECHO Invalid Month!!!
-pause
-goto START
-)
-If "%MM1%" lss "01" (
-ECHO Invalid Month!!!
-pause
-goto START
-)
-If "%MM1%" GTR "12" (
-ECHO Invalid Month!!!
-pause
-goto START
-)
-if "%MM1%"=="01" (
-set MON1=JAN
-)
-if "%MM1%"=="02" (
-set MON1=FEB
-)
-if "%MM1%"=="03" (
-set MON1=MAR
-)
-if "%MM1%"=="04" (
-set MON1=APR
-)
-if "%MM1%"=="05" (
-set MON1=MAY
-)
-if "%MM1%"=="06" (
-set MON1=JUN
-)
-if "%MM1%"=="07" (
-set MON1=JUL
-)
-if "%MM1%"=="08" (
-set MON1=AUG
-)
-if "%MM1%"=="09" (
-set MON1=SEP
-)
-if "%MM1%"=="10" (
-set MON1=OCT
-)
-if "%MM1%"=="11" (
-set MON1=NOV
-)
-if "%MM1%"=="12" (
-set MON1=DEC
-)
 
 
 If "%DD%"==" " (
@@ -186,29 +128,8 @@ pause
 goto START
 )
 
-If "%DD1%"==" " (
-ECHO Invalid Day!!!
-pause
-goto START
-)
-If "%DD1%"=="" (
-ECHO Invalid Day!!!
-pause
-goto START
-)
-If "%DD1%" lss "01" (
-ECHO Invalid Day!!!
-pause
-goto START
-)
-If "%DD1%" gtr "31" (
-ECHO Invalid Day!!!
-pause
-goto START
-)
 
 
-set YY=0
 if "%YEAR%"=="2018" (
 set YY=18
 )
@@ -231,28 +152,14 @@ if "%YEAR%"=="2024" (
 set YY=24
 )
 
-set YY1=0
-if "%YEAR1%"=="2018" (
-set YY1=18
-)
-if "%YEAR1%"=="2019" (
-set YY1=19
-)
-if "%YEAR1%"=="2020" (
-set YY1=20
-)
-if "%YEAR1%"=="2021" (
-set YY1=21
-)
-if "%YEAR1%"=="2022" (
-set YY1=22
-)
-if "%YEAR1%"=="2023" (
-set YY1=23
-)
-if "%YEAR1%"=="2024" (
-set YY1=24
-)
 
 set DATE=%DD%%MON%%YEAR%
 set TOMR=%DD1%%MON1%%YEAR1%
+
+::setting up input locations %USERPROFILE%
+set exceptionLog=\\pkshares\Operations\Export_NEW\FCB\SWX_PDF_exception.txt
+set FILES_DIR_MAIN=\\pkshares\Operations\Export_NEW\FCB\Prime ^& SWX %YEAR%%MM%%DD%
+set FILES_DIR_TERMINAL=\\pkshares\Operations\Export_NEW\FCB\Prime ^& SWX %YEAR%%MM%%DD%\Terminal Rpts %YEAR%%MM%%DD%
+
+
+
