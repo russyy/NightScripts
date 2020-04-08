@@ -15,7 +15,7 @@ rem +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 :START
 cls
 echo       --------------------------------------
-echo                  CheckNightFiles.bat - LIVE
+echo                  CheckNightFiles
 echo       --------------------------------------
 ECHO.
 echo.
