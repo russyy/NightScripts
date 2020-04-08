@@ -1,0 +1,258 @@
+@echo off
+
+rem +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+rem +                                                       +
+rem +  CheckNightFiles.BAT                                 +      
+rem +                                                       +         
+rem +  Created by : last name ever, first name greatest     +  
+rem +  Version: 1    Created: 2020-00-00                    +
+rem +                                                       +
+rem +  This .BAT FILE checks night files from prime&swx     +
+rem +                                                       +
+rem +                                                       +
+rem +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+:START
+cls
+echo       --------------------------------------
+echo                  CheckNightFiles.bat - LIVE
+echo       --------------------------------------
+ECHO.
+echo.
+echo.
+set /p DD=      Enter Processing Date (DD)    :
+set /p MM=                            (MM)    :
+set /p YEAR=                           (YYYY)   :
+echo.
+set /p DD1=      Enter Following Date  (DD)    :
+set /p MM1=                            (MM)    :
+set /p YEAR1=                           (YYYY)   :
+echo.
+echo       --------------------------------------
+echo.
+set /p choice=      Confirm dates above (Y/N) :
+
+
+if not '%choice%'=='' set choice=%choice:~0,1%
+if "%choice%"=="Y" goto CHECK_DATE
+if "%choice%"=="N" goto START
+if "%choice%"=="y" goto CHECK_DATE
+if "%choice%"=="n" goto START
+If "%choice%"==" " goto START
+If "%choice%"=="X" Exit
+::
+color 4C
+echo.
+echo "%choice%" is NOT A VALID OPTION - TRY AGAIN...
+echo 
+pause
+goto START
+
+
+:CHECK_DATE
+If "%MM%"=="" (
+ECHO Invalid Month!!!
+pause
+goto START
+)
+If "%MM%"==" " (
+ECHO Invalid Month!!!
+pause
+goto START
+)
+If "%MM%" lss "01" (
+ECHO Invalid Month!!!
+pause
+goto START
+)
+If "%MM%" GTR "12" (
+ECHO Invalid Month!!!
+pause
+goto START
+)
+if "%MM%"=="01" (
+set MON=JAN
+)
+if "%MM%"=="02" (
+set MON=FEB
+)
+if "%MM%"=="03" (
+set MON=MAR
+)
+if "%MM%"=="04" (
+set MON=APR
+)
+if "%MM%"=="05" (
+set MON=MAY
+)
+if "%MM%"=="06" (
+set MON=JUN
+)
+if "%MM%"=="07" (
+set MON=JUL
+)
+if "%MM%"=="08" (
+set MON=AUG
+)
+if "%MM%"=="09" (
+set MON=SEP
+)
+if "%MM%"=="10" (
+set MON=OCT
+)
+if "%MM%"=="11" (
+set MON=NOV
+)
+if "%MM%"=="12" (
+set MON=DEC
+)
+
+If "%MM1%"=="" (
+ECHO Invalid Month!!!
+pause
+goto START
+)
+If "%MM1%"==" " (
+ECHO Invalid Month!!!
+pause
+goto START
+)
+If "%MM1%" lss "01" (
+ECHO Invalid Month!!!
+pause
+goto START
+)
+If "%MM1%" GTR "12" (
+ECHO Invalid Month!!!
+pause
+goto START
+)
+if "%MM1%"=="01" (
+set MON1=JAN
+)
+if "%MM1%"=="02" (
+set MON1=FEB
+)
+if "%MM1%"=="03" (
+set MON1=MAR
+)
+if "%MM1%"=="04" (
+set MON1=APR
+)
+if "%MM1%"=="05" (
+set MON1=MAY
+)
+if "%MM1%"=="06" (
+set MON1=JUN
+)
+if "%MM1%"=="07" (
+set MON1=JUL
+)
+if "%MM1%"=="08" (
+set MON1=AUG
+)
+if "%MM1%"=="09" (
+set MON1=SEP
+)
+if "%MM1%"=="10" (
+set MON1=OCT
+)
+if "%MM1%"=="11" (
+set MON1=NOV
+)
+if "%MM1%"=="12" (
+set MON1=DEC
+)
+
+
+If "%DD%"==" " (
+ECHO Invalid Day!!!
+pause
+goto START
+)
+If "%DD%"=="" (
+ECHO Invalid Day!!!
+pause
+goto START
+)
+If "%DD%" lss "01" (
+ECHO Invalid Day!!!
+pause
+goto START
+)
+If "%DD%" gtr "31" (
+ECHO Invalid Day!!!
+pause
+goto START
+)
+
+If "%DD1%"==" " (
+ECHO Invalid Day!!!
+pause
+goto START
+)
+If "%DD1%"=="" (
+ECHO Invalid Day!!!
+pause
+goto START
+)
+If "%DD1%" lss "01" (
+ECHO Invalid Day!!!
+pause
+goto START
+)
+If "%DD1%" gtr "31" (
+ECHO Invalid Day!!!
+pause
+goto START
+)
+
+
+set YY=0
+if "%YEAR%"=="2018" (
+set YY=18
+)
+if "%YEAR%"=="2019" (
+set YY=19
+)
+if "%YEAR%"=="2020" (
+set YY=20
+)
+if "%YEAR%"=="2021" (
+set YY=21
+)
+if "%YEAR%"=="2022" (
+set YY=22
+)
+if "%YEAR%"=="2023" (
+set YY=23
+)
+if "%YEAR%"=="2024" (
+set YY=24
+)
+
+set YY1=0
+if "%YEAR1%"=="2018" (
+set YY1=18
+)
+if "%YEAR1%"=="2019" (
+set YY1=19
+)
+if "%YEAR1%"=="2020" (
+set YY1=20
+)
+if "%YEAR1%"=="2021" (
+set YY1=21
+)
+if "%YEAR1%"=="2022" (
+set YY1=22
+)
+if "%YEAR1%"=="2023" (
+set YY1=23
+)
+if "%YEAR1%"=="2024" (
+set YY1=24
+)
+
+set DATE=%DD%%MON%%YEAR%
+set TOMR=%DD1%%MON1%%YEAR1%
